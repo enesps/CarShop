@@ -1,0 +1,53 @@
+{
+  "name": "rent-a-car",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@babel/helper-module-imports": "^7.18.6",
+    "@flaticon/flaticon-uicons": "^1.7.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@iconscout/react-unicons": "^1.1.6",
+    "axios": "^1.2.1",
+    "babel-plugin-macros": "^3.1.0",
+    "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.2",
+    "cheerio": "^1.0.0-rc.12",
+    "chrome-aws-lambda": "^9.1.0",
+    "cookie": "^0.5.0",
+    "ejs": "^3.1.8",
+    "feather": "^0.0.5",
+    "flaticon": "^0.1.0",
+    "fontawesome": "^5.6.3",
+    "icomoon": "^1.0.0",
+    "jose": "^4.11.1",
+    "jquery": "^3.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "latest": "^0.2.0",
+    "next": "^13.0.5",
+    "njs": "^0.0.2",
+    "nvm": "^0.0.4",
+    "puppeteer": "^19.4.0",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "^18.2.0",
+    "react-owl-carousel": "^2.3.3",
+    "request": "^2.88.2",
+    "tailwind": "^4.0.0",
+    "window": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/bootstrap": "^5.2.6",
+    "tailwindcss": "^3.2.4"
+  }
+}

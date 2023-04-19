@@ -1,0 +1,40 @@
+version: '3'
+services:
+  car-shop-db:
+    image: mysql
+    # env_file:
+    #   - car-shop-backend/.env
+    container_name: car-shop-db
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - type: volume
+        source: my-mysql-volume
+        target: /var/lib/mysql
+      - type: bind
+        source: ./mysql-dumps
+        target: /docker-entrypoint-initdb.d/
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: cemre123
+      MYSQL_DATABASE: carshop
+
+  car-shop-backend:
+    build: ./car-shop-backend
+    container_name: car-shop-backend
+    ports:
+      - 2000:2000
+    links:
+      - car-shop-db
+
+  car-shop-frontend:
+    build: ./car-shop-frontend
+    container_name: car-shop-frontend
+    ports:
+      - 4200:80
+    links:
+      - car-shop-backend
+
+volumes:
+    my-mysql-volume:

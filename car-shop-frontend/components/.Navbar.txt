@@ -1,0 +1,36 @@
+// import { getCookie } from './utils';
+import cookie from 'cookie';
+import axios from "axios";
+import obj from "../pages/login"
+import { getCookie } from "./getCookie"
+import { useState, useEffect } from "react";
+import UnauthenticatedNavbar from "./UnauthenticatedNavbar";
+import AuthenticatedNavbar from "./AuthenticatedNavbar";
+
+const Navbar = () =>{
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    
+    useEffect(() => {
+      async function checkLoginStatus() {
+        // Use the getCookie function to retrieve the token from the cookies
+        const token = getCookie('Cookie');
+        console.log("TOKEN",token)
+        setIsAuthenticated(!!token);
+      }
+    
+      checkLoginStatus();
+    }, []);
+  
+    console.log("IS?",isAuthenticated)
+    return (isAuthenticated ? <AuthenticatedNavbar /> : <UnauthenticatedNavbar />);
+  }
+
+  export default Navbar;
+
+  export function getme(name) {
+    console.log("BOZUĞUM")
+    // Parse the cookies from the request headers
+    const cookies = cookie.parse(document.cookie);
+    // Return the value of the cookie with the specified name
+    return cookies[name];
+  }
